@@ -1,0 +1,23 @@
+<mockup version="1.0" skin="sketch" measuredW="862" measuredH="548" mockupW="282" mockupH="510">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="580" y="38" w="282" h="510" measuredW="282" measuredH="510" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bgPattern>topOnly</bgPattern>
+        <topBar>false</topBar>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::iPhoneMenu" x="607" y="165" w="228" h="-1" measuredW="215" measuredH="304" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>Bearbeitung%0AFr%FChestens%2C%20ON%0ASp%E4testens%2C%20ON%0AT%E4glich%20Beginn%2C%20OFF%0ANachrichtencenter%2C%20OFF%0A%20%0AAufgaben%0APuffer%2C%2010%25%20%28%3E%29%0A%20%0AArbeitszeiten%20bearbeiten%2C%20%28%3E%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="615" y="131" w="-1" h="-1" measuredW="108" measuredH="26" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <size>18</size>
+        <text>Einstellungen</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
