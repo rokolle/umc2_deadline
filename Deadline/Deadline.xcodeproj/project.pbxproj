@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F6E1E0C166226D000D10796 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E1E0B166226D000D10796 /* TaskViewController.m */; };
-		8F6E1E0F16622BB900D10796 /* Deadline.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E1E0E16622BB900D10796 /* Deadline.xcdatamodel */; };
+		8FCD09BB16637D0500C06CB3 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD09BA16637D0500C06CB3 /* TaskDetailViewController.m */; };
 		8FE1B0DE164FFBAE00812FE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1B0DD164FFBAE00812FE5 /* UIKit.framework */; };
 		8FE1B0E0164FFBAE00812FE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1B0DF164FFBAE00812FE5 /* Foundation.framework */; };
 		8FE1B0E2164FFBAE00812FE5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1B0E1164FFBAE00812FE5 /* CoreGraphics.framework */; };
@@ -20,8 +19,9 @@
 		8FE1B0F4164FFBAE00812FE5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE1B0F3164FFBAE00812FE5 /* Default@2x.png */; };
 		8FE1B0F6164FFBAE00812FE5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE1B0F5164FFBAE00812FE5 /* Default-568h@2x.png */; };
 		8FE1B0F9164FFBAE00812FE5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE1B0F7164FFBAE00812FE5 /* MainStoryboard.storyboard */; };
+		8FE1B0FC164FFBAE00812FE5 /* Deadline.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1B0FA164FFBAE00812FE5 /* Deadline.xcdatamodeld */; };
 		8FE1B0FF164FFBAE00812FE5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1B0FE164FFBAE00812FE5 /* MasterViewController.m */; };
-		8FE1B102164FFBAE00812FE5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1B101164FFBAE00812FE5 /* DetailViewController.m */; };
+		8FE1B102164FFBAE00812FE5 /* DeadlineDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1B101164FFBAE00812FE5 /* DeadlineDetailViewController.m */; };
 		8FE1B10A164FFBAE00812FE5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1B109164FFBAE00812FE5 /* SenTestingKit.framework */; };
 		8FE1B10B164FFBAE00812FE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1B0DD164FFBAE00812FE5 /* UIKit.framework */; };
 		8FE1B10C164FFBAE00812FE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1B0DF164FFBAE00812FE5 /* Foundation.framework */; };
@@ -41,9 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8F6E1E0A166226D000D10796 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
-		8F6E1E0B166226D000D10796 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
-		8F6E1E0E16622BB900D10796 /* Deadline.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Deadline.xcdatamodel; sourceTree = "<group>"; };
+		8FCD09B916637D0500C06CB3 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
+		8FCD09BA16637D0500C06CB3 /* TaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
 		8FE1B0D9164FFBAE00812FE5 /* Deadline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deadline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE1B0DD164FFBAE00812FE5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8FE1B0DF164FFBAE00812FE5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,10 +58,11 @@
 		8FE1B0F3164FFBAE00812FE5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8FE1B0F5164FFBAE00812FE5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8FE1B0F8164FFBAE00812FE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		8FE1B0FB164FFBAE00812FE5 /* Deadline.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Deadline.xcdatamodel; sourceTree = "<group>"; };
 		8FE1B0FD164FFBAE00812FE5 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		8FE1B0FE164FFBAE00812FE5 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		8FE1B100164FFBAE00812FE5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		8FE1B101164FFBAE00812FE5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		8FE1B100164FFBAE00812FE5 /* DeadlineDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeadlineDetailViewController.h; sourceTree = "<group>"; };
+		8FE1B101164FFBAE00812FE5 /* DeadlineDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeadlineDetailViewController.m; sourceTree = "<group>"; };
 		8FE1B108164FFBAE00812FE5 /* DeadlineTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeadlineTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE1B109164FFBAE00812FE5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		8FE1B112164FFBAE00812FE5 /* DeadlineTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeadlineTests-Info.plist"; sourceTree = "<group>"; };
@@ -136,11 +136,11 @@
 				8FE1B0F7164FFBAE00812FE5 /* MainStoryboard.storyboard */,
 				8FE1B0FD164FFBAE00812FE5 /* MasterViewController.h */,
 				8FE1B0FE164FFBAE00812FE5 /* MasterViewController.m */,
-				8FE1B100164FFBAE00812FE5 /* DetailViewController.h */,
-				8FE1B101164FFBAE00812FE5 /* DetailViewController.m */,
-				8F6E1E0A166226D000D10796 /* TaskViewController.h */,
-				8F6E1E0B166226D000D10796 /* TaskViewController.m */,
-				8F6E1E0E16622BB900D10796 /* Deadline.xcdatamodel */,
+				8FE1B100164FFBAE00812FE5 /* DeadlineDetailViewController.h */,
+				8FE1B101164FFBAE00812FE5 /* DeadlineDetailViewController.m */,
+				8FCD09B916637D0500C06CB3 /* TaskDetailViewController.h */,
+				8FCD09BA16637D0500C06CB3 /* TaskDetailViewController.m */,
+				8FE1B0FA164FFBAE00812FE5 /* Deadline.xcdatamodeld */,
 				8FE1B0E6164FFBAE00812FE5 /* Supporting Files */,
 			);
 			path = Deadline;
@@ -291,10 +291,10 @@
 			files = (
 				8FE1B0EC164FFBAE00812FE5 /* main.m in Sources */,
 				8FE1B0F0164FFBAE00812FE5 /* AppDelegate.m in Sources */,
+				8FE1B0FC164FFBAE00812FE5 /* Deadline.xcdatamodeld in Sources */,
 				8FE1B0FF164FFBAE00812FE5 /* MasterViewController.m in Sources */,
-				8FE1B102164FFBAE00812FE5 /* DetailViewController.m in Sources */,
-				8F6E1E0C166226D000D10796 /* TaskViewController.m in Sources */,
-				8F6E1E0F16622BB900D10796 /* Deadline.xcdatamodel in Sources */,
+				8FE1B102164FFBAE00812FE5 /* DeadlineDetailViewController.m in Sources */,
+				8FCD09BB16637D0500C06CB3 /* TaskDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +481,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8FE1B0FA164FFBAE00812FE5 /* Deadline.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8FE1B0FB164FFBAE00812FE5 /* Deadline.xcdatamodel */,
+			);
+			currentVersion = 8FE1B0FB164FFBAE00812FE5 /* Deadline.xcdatamodel */;
+			path = Deadline.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8FE1B0D0164FFBAE00812FE5 /* Project object */;
 }
