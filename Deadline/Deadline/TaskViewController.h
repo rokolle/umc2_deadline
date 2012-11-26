@@ -6,8 +6,11 @@
 //  Copyright (c) 2012 SeRoBe. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface TaskViewController : NSObject
+@interface TaskViewController : UIViewController
 
+@property (strong, nonatomic) id detailItem;
+
+@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end
