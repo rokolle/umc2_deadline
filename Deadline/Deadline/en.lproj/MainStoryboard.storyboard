@@ -8,7 +8,7 @@
         <scene sceneID="11">
             <objects>
                 <navigationController id="3" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -68,41 +68,6 @@
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--Deadline Edit View Controller-->
-        <scene sceneID="1pu-4h-ZLg">
-            <objects>
-                <viewController id="4QF-HT-zSe" customClass="DeadlineEditViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oCY-po-La2">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQa-Dm-eWp">
-                                <items>
-                                    <navigationItem title="Title" id="wqe-Qs-J8n">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="r4i-0Y-VGR">
-                                            <connections>
-                                                <action selector="DoneButtonAction:" destination="4QF-HT-zSe" id="pxx-kl-L5E"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="GQa-Dm-eWp" firstAttribute="leading" secondItem="oCY-po-La2" secondAttribute="leading" type="default" id="4CP-3w-Xyv"/>
-                            <constraint firstItem="GQa-Dm-eWp" firstAttribute="top" secondItem="oCY-po-La2" secondAttribute="top" type="default" id="Ng0-0c-rVE"/>
-                            <constraint firstItem="GQa-Dm-eWp" firstAttribute="trailing" secondItem="oCY-po-La2" secondAttribute="trailing" type="default" id="Q4w-7M-pcV"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="navItem" destination="wqe-Qs-J8n" id="QdH-6d-uWW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qOw-OU-nCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1648" y="-636"/>
-        </scene>
         <!--Deadline Detail View Controller - Deadline-Detail-->
         <scene sceneID="24">
             <objects>
@@ -112,10 +77,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="deadlineDuration" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="GHF-aR-tn7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LMS-sv-8Iu">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -151,17 +119,17 @@
                                     <outlet property="delegate" destination="21" id="sGV-ef-FU4"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9HS-DA-btZ">
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="9HS-DA-btZ">
                                 <items>
                                     <navigationItem title="Tasks" id="Plt-62-xsq"/>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LMS-sv-8Iu" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" type="default" id="4SR-2e-YIZ"/>
                             <constraint firstItem="9HS-DA-btZ" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="K6Q-aD-tnN"/>
-                            <constraint firstItem="LMS-sv-8Iu" firstAttribute="top" secondItem="22" secondAttribute="top" constant="200" type="user" id="Qlb-iL-tZz"/>
+                            <constraint firstItem="LMS-sv-8Iu" firstAttribute="top" secondItem="22" secondAttribute="top" constant="160" type="user" id="Qlb-iL-tZz"/>
                             <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="R0m-z7-TWk"/>
                             <constraint firstItem="LMS-sv-8Iu" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="az1-ey-SxS"/>
                             <constraint firstItem="LMS-sv-8Iu" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="fYw-MV-Bgy"/>
@@ -197,13 +165,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="taskDuration" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="O85-9I-txH">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="zTN-f0-wdU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="O85-9I-txH" firstAttribute="leading" secondItem="M8d-hX-Dyl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GJI-d0-9ic"/>
                             <constraint firstAttribute="trailing" secondItem="O85-9I-txH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OgV-Vq-qzi"/>
@@ -233,7 +204,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeT-3G-gfZ">
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="JeT-3G-gfZ">
                                 <items>
                                     <navigationItem title="Task Edit View" id="YhL-2x-Jsq">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Re2-Nx-dZd">
@@ -246,7 +217,7 @@
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faV-tr-o3L">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nc6-Ds-Qlx">
@@ -255,7 +226,7 @@
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="benötigte Bearbeitungszeit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kar-yK-1wk">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ad-92-7RC">
@@ -263,7 +234,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JeT-3G-gfZ" firstAttribute="leading" secondItem="DR6-ce-rb6" secondAttribute="leading" type="default" id="34l-kR-wCo"/>
                             <constraint firstItem="JeT-3G-gfZ" firstAttribute="trailing" secondItem="DR6-ce-rb6" secondAttribute="trailing" type="default" id="6Yh-sR-vHv"/>
@@ -298,7 +269,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdO-6B-ejY">
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="SdO-6B-ejY">
                                 <items>
                                     <navigationItem title="Deadline Edit View" id="d8D-DE-sPg">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="zPe-dD-fMi">
@@ -311,7 +282,7 @@
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVW-nm-gZr">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xkx-ha-bVf">
@@ -320,11 +291,11 @@
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Fälligkeitsdatum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEo-4y-3Dm">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SdO-6B-ejY" firstAttribute="top" secondItem="tMw-rh-kwW" secondAttribute="top" type="default" id="3HQ-j6-hIj"/>
                             <constraint firstItem="Xkx-ha-bVf" firstAttribute="top" secondItem="bVW-nm-gZr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3nb-Is-0fu"/>
@@ -345,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiK-yx-i0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="-636"/>
+            <point key="canvasLocation" x="1648" y="-620"/>
         </scene>
     </scenes>
     <classes>

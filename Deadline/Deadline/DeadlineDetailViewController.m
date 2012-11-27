@@ -47,7 +47,7 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.taskNavItem.leftBarButtonItem = addButton;
-    
+
     [self configureView];
 }
 
