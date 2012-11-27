@@ -62,7 +62,13 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Deadline" id="36"/>
+                    <navigationItem key="navigationItem" title="Deadline" id="36">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="13v-Y7-5UV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0V5-QI-O8Y"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="inn-Yn-Q9K" kind="modal" identifier="showDeadlineEdit" modalTransitionStyle="flipHorizontal" id="qwr-BQ-46f"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,11 +156,12 @@
                         <outlet property="deadlineDuration" destination="27" id="HaT-wq-61E"/>
                         <outlet property="tableView" destination="LMS-sv-8Iu" id="MZ9-Fa-xMe"/>
                         <outlet property="taskNavItem" destination="Plt-62-xsq" id="o0I-uc-cXx"/>
+                        <segue destination="hHx-Fs-Za4" kind="modal" identifier="showTaskEdit" modalTransitionStyle="flipHorizontal" id="X4j-4m-0d7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="64"/>
+            <point key="canvasLocation" x="1016" y="64"/>
         </scene>
         <!--Task Detail View Controller - Task-Detail-->
         <scene sceneID="xch-Jf-pQX">
@@ -259,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9x-Eq-XcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2160" y="64"/>
+            <point key="canvasLocation" x="1974" y="-697"/>
         </scene>
         <!--Deadline Edit View Controller-->
         <scene sceneID="8sR-UR-8ue">
@@ -316,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiK-yx-i0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="-620"/>
+            <point key="canvasLocation" x="1337" y="-697"/>
         </scene>
     </scenes>
     <classes>
@@ -360,4 +367,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="7rz-i1-0zM"/>
+        <segue reference="X4j-4m-0d7"/>
+    </inferredMetricsTieBreakers>
 </document>

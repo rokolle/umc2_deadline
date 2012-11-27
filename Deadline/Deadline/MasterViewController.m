@@ -56,6 +56,9 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+
+    // Direkter Wechsel in EditView nach Erstellung des neuen Objekts durch extra im Storyboard angelegte Segue.
+    [self performSegueWithIdentifier: @"showDeadlineEdit" sender: self];
 }
 
 #pragma mark - Table View

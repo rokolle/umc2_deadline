@@ -142,6 +142,9 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+
+    // Direkter Wechsel in EditView nach Erstellung des neuen Objekts durch extra im Storyboard angelegte Segue.
+    [self performSegueWithIdentifier: @"showTaskEdit" sender: self];
 }
 
 #pragma mark - Fetched results controller
