@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E7F0C2C166E98A60037A72E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E7F0C2B166E98A60037A72E /* Settings.bundle */; };
+		8E7F0C2E166EB3DB0037A72E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E7F0C2B166E98A60037A72E /* Settings.bundle */; };
 		8F69D3FE1664D50500881BD6 /* DeadlineEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F69D3FD1664D50500881BD6 /* DeadlineEditViewController.m */; };
 		8FC36D071664F6880072FED3 /* TaskEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC36D061664F6880072FED3 /* TaskEditViewController.m */; };
 		8FCD09BB16637D0500C06CB3 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD09BA16637D0500C06CB3 /* TaskDetailViewController.m */; };
@@ -43,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E7F0C2B166E98A60037A72E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8F69D3FC1664D50400881BD6 /* DeadlineEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineEditViewController.h; sourceTree = "<group>"; };
 		8F69D3FD1664D50500881BD6 /* DeadlineEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineEditViewController.m; sourceTree = "<group>"; };
 		8FC36D051664F6880072FED3 /* TaskEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskEditViewController.h; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 		8FE1B0E5164FFBAE00812FE5 /* Deadline */ = {
 			isa = PBXGroup;
 			children = (
+				8E7F0C2B166E98A60037A72E /* Settings.bundle */,
 				8FE1B0EE164FFBAE00812FE5 /* AppDelegate.h */,
 				8FE1B0EF164FFBAE00812FE5 /* AppDelegate.m */,
 				8FE1B0F7164FFBAE00812FE5 /* MainStoryboard.storyboard */,
@@ -266,6 +270,7 @@
 				8FE1B0F4164FFBAE00812FE5 /* Default@2x.png in Resources */,
 				8FE1B0F6164FFBAE00812FE5 /* Default-568h@2x.png in Resources */,
 				8FE1B0F9164FFBAE00812FE5 /* MainStoryboard.storyboard in Resources */,
+				8E7F0C2C166E98A60037A72E /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE1B115164FFBAE00812FE5 /* InfoPlist.strings in Resources */,
+				8E7F0C2E166EB3DB0037A72E /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
