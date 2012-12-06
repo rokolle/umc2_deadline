@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11G63b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Deadline">
-        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" attributeType="Date" syncable="YES"/>
+        <attribute name="name" attributeType="String">
             <userInfo/>
         </attribute>
+        <relationship name="hasTask" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="inDeadline" inverseEntity="Task" syncable="YES"/>
         <userInfo/>
     </entity>
-    <entity name="Task" syncable="YES">
-        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Task">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="done" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="duration" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="inDeadline" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Deadline" inverseName="hasTask" inverseEntity="Deadline" syncable="YES"/>
+        <userInfo/>
     </entity>
     <elements>
-        <element name="Deadline" positionX="396" positionY="126" width="128" height="90"/>
-        <element name="Task" positionX="522" positionY="285" width="153" height="90"/>
+        <element name="Deadline" positionX="396" positionY="126" width="128" height="105"/>
+        <element name="Task" positionX="720" positionY="30" width="153" height="120"/>
     </elements>
 </model>

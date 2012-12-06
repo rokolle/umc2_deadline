@@ -34,7 +34,7 @@
 
     if (self.deadlineDetailItem) {
         self.navigationItem.title = [[self.deadlineDetailItem valueForKey:@"name"] description];
-        self.deadlineDuration.text = [[self.deadlineDetailItem valueForKey:@"duration"] description];
+        self.deadlineEndDate.text = [[self.deadlineDetailItem valueForKey:@"endDate"] description];
     }
 }
 
@@ -133,6 +133,9 @@
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newManagedObject setValue:[NSString stringWithFormat:@"Task %@", [NSDate date]] forKey:@"name"];
     [newManagedObject setValue:[NSNumber numberWithInt:4712] forKey:@"duration"];
+
+    // Hinzufuegen des neuen TaskObjekts zur Deadline
+    [newManagedObject setValue:self.deadlineDetailItem forKey:@"inDeadline"];
     
     // Save the context.
     NSError *error = nil;
@@ -169,9 +172,13 @@
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
+    // Nur Tasks passend zur Deadline zurueckliefern
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"inDeadline == %@", self.deadlineDetailItem];
+    [fetchRequest setPredicate:predicate];
+    
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
