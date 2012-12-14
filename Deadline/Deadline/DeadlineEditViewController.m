@@ -7,6 +7,7 @@
 //
 
 #import "DeadlineEditViewController.h"
+#import "DeadlineDetailViewController.h"
 
 @interface DeadlineEditViewController ()
 
@@ -14,15 +15,28 @@
 
 @implementation DeadlineEditViewController
 
+- (void)setDeadlineDetailItem:(id)newDeadlineDetailItem
+{
+    if (_deadlineDetailItem != newDeadlineDetailItem) {
+        _deadlineDetailItem = newDeadlineDetailItem;
+    }
+}
+
 - (void)configureView
 {
-    self.navItem.title = @"dline title gesetzt in C";
+    // Update the user interface for the detail item.
+    if (self.deadlineDetailItem) {
+        self.navItem.title = [self.deadlineDetailItem valueForKey:@"name"];
+        self.nameTextField.text = [self.deadlineDetailItem valueForKey:@"name"];
+        [self.datePicker setDate:[self.deadlineDetailItem valueForKey:@"endDate"] animated:YES];
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    // Update the view.
     [self configureView];
 }
 
@@ -33,6 +47,16 @@
 }
 
 - (IBAction)DoneButtonAction:(id)sender {
+    [self.deadlineDetailItem setValue:self.nameTextField.text forKey:@"name"];
+    [self.deadlineDetailItem setValue:self.datePicker.date forKey:@"endDate"];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)datePickerValueChanged:(id)sender {
+}
+
+- (IBAction)doneEditingTextField:(id)sender {
+    [sender resignFirstResponder];
 }
 @end

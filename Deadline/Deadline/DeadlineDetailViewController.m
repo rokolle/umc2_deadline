@@ -22,16 +22,13 @@
 {
     if (_deadlineDetailItem != newDeadlineDetailItem) {
         _deadlineDetailItem = newDeadlineDetailItem;
-        
-        // Update the view.
-        [self configureView];
     }
 }
 
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
+    NSLog(@"configureView in DeadlineDetailViewController");
     if (self.deadlineDetailItem) {
         self.navigationItem.title = [[self.deadlineDetailItem valueForKey:@"name"] description];
         self.deadlineEndDate.text = [[self.deadlineDetailItem valueForKey:@"endDate"] description];
@@ -259,15 +256,17 @@
     cell.textLabel.text = [[object valueForKey:@"name"] description];
 }
 
-// Uebergabe der Daten bei Uebergang zum Task Detail View
+// Uebergabe der Daten bei Uebergang zum Task Detail View bzw. Deadline Edit View
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showTaskDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setTaskDetailItem:object];
-        NSLog(@"Aufruf der Task Detail View");
+    }
+    
+    if ([[segue identifier] isEqualToString:@"showDeadlineEdit"]) {
+        [[segue destinationViewController] setDeadlineDetailItem:self.deadlineDetailItem];
     }
 }
-
 @end

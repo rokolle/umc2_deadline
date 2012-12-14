@@ -160,7 +160,7 @@
                     <navigationItem key="navigationItem" title="Deadline-Detail" id="26">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Wic-0n-rtb">
                             <connections>
-                                <segue destination="inn-Yn-Q9K" kind="modal" modalTransitionStyle="flipHorizontal" id="7rz-i1-0zM"/>
+                                <segue destination="inn-Yn-Q9K" kind="modal" identifier="showDeadlineEdit" modalTransitionStyle="flipHorizontal" id="7rz-i1-0zM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -226,7 +226,7 @@
                     <navigationItem key="navigationItem" title="Task-Detail" id="AFd-KD-3TV">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="OMG-Yo-hcx">
                             <connections>
-                                <segue destination="hHx-Fs-Za4" kind="modal" modalTransitionStyle="flipHorizontal" id="ZZa-vK-r2E"/>
+                                <segue destination="hHx-Fs-Za4" kind="modal" identifier="showTaskEdit" modalTransitionStyle="flipHorizontal" id="ZZa-vK-r2E"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -350,20 +350,61 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xkx-ha-bVf">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="doneEditingTextField:" destination="inn-Yn-Q9K" eventType="editingDidEndOnExit" id="DKJ-C8-MxM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Fälligkeitsdatum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEo-4y-3Dm">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mul-2z-yhl">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="Id6-kL-z7f"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="377167129.81575">
+                                    <!--2012-12-14 08:38:49 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-31582800">
+                                    <!--2000-01-01 11:00:00 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                </timeZone>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="inn-Yn-Q9K" eventType="valueChanged" id="lPP-ig-AfF"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Mul-2z-yhl" firstAttribute="leading" secondItem="tMw-rh-kwW" secondAttribute="leading" type="default" id="11e-zb-FOZ"/>
                             <constraint firstItem="SdO-6B-ejY" firstAttribute="top" secondItem="tMw-rh-kwW" secondAttribute="top" type="default" id="3HQ-j6-hIj"/>
                             <constraint firstItem="Xkx-ha-bVf" firstAttribute="top" secondItem="bVW-nm-gZr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3nb-Is-0fu"/>
                             <constraint firstAttribute="trailing" secondItem="bVW-nm-gZr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="HZW-ix-ehX"/>
                             <constraint firstItem="SdO-6B-ejY" firstAttribute="leading" secondItem="tMw-rh-kwW" secondAttribute="leading" type="default" id="Iu6-XY-Hkr"/>
                             <constraint firstItem="tEo-4y-3Dm" firstAttribute="leading" secondItem="tMw-rh-kwW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NnC-SC-GWT"/>
+                            <constraint firstItem="Mul-2z-yhl" firstAttribute="top" secondItem="tEo-4y-3Dm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="a4v-oT-p5K"/>
+                            <constraint firstItem="Mul-2z-yhl" firstAttribute="trailing" secondItem="tMw-rh-kwW" secondAttribute="trailing" type="default" id="lBQ-q3-v0I"/>
                             <constraint firstItem="Xkx-ha-bVf" firstAttribute="leading" secondItem="tMw-rh-kwW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lKk-Tk-rJb"/>
                             <constraint firstItem="SdO-6B-ejY" firstAttribute="trailing" secondItem="tMw-rh-kwW" secondAttribute="trailing" type="default" id="oqi-41-BNA"/>
                             <constraint firstAttribute="trailing" secondItem="Xkx-ha-bVf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pgu-bB-7ak"/>
@@ -373,6 +414,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="Mul-2z-yhl" id="acg-vy-htN"/>
+                        <outlet property="nameTextField" destination="Xkx-ha-bVf" id="P5t-JJ-BY1"/>
                         <outlet property="navItem" destination="d8D-DE-sPg" id="4fG-U5-uXQ"/>
                     </connections>
                 </viewController>
@@ -394,6 +437,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DeadlineEditViewController.h"/>
             <relationships>
                 <relationship kind="action" name="DoneButtonAction:"/>
+                <relationship kind="action" name="datePickerValueChanged:"/>
+                <relationship kind="action" name="doneEditingTextField:"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
             </relationships>
         </class>
@@ -423,7 +470,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ZZa-vK-r2E"/>
         <segue reference="7rz-i1-0zM"/>
+        <segue reference="ZZa-vK-r2E"/>
     </inferredMetricsTieBreakers>
 </document>

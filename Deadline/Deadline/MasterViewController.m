@@ -16,6 +16,8 @@
 
 @implementation MasterViewController
 
+NSManagedObject *newManagedObject;
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -41,11 +43,11 @@
 {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSString stringWithFormat:@"DLine %@", [NSDate date]] forKey:@"name"];
+    [newManagedObject setValue:[NSString stringWithFormat:@"Deadline"] forKey:@"name"];
     [newManagedObject setValue:[NSDate date] forKey:@"endDate"];
     
     // Save the context.
@@ -109,6 +111,7 @@
     return NO;
 }
 
+// Uebergabe der Daten bei Uebergang zum Deadline Detail View bzw. Deadline Edit View
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDeadlineDetail"]) {
@@ -116,9 +119,12 @@
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDeadlineDetailItem:object];
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
-        NSLog(@"Aufruf der Deadline Detail View");
+    }
+    if ([[segue identifier] isEqualToString:@"showDeadlineEdit"]) {
+        [[segue destinationViewController] setDeadlineDetailItem:newManagedObject];
     }
 }
+
 
 #pragma mark - Fetched results controller
 
@@ -224,5 +230,6 @@
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"name"] description];
 }
+
 
 @end
