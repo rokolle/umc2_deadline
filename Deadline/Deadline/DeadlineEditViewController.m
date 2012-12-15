@@ -12,7 +12,6 @@
 #import "AppDelegate.h"
 
 @interface DeadlineEditViewController ()
-
 @end
 
 @implementation DeadlineEditViewController
@@ -21,6 +20,13 @@
 {
     if (_deadlineDetailItem != newDeadlineDetailItem) {
         _deadlineDetailItem = newDeadlineDetailItem;
+    }
+}
+
+- (void)setDeadlineDetailView:(id)newDeadlineDetailView
+{
+    if (_deadlineDetailView != newDeadlineDetailView) {
+        _deadlineDetailView = newDeadlineDetailView;
     }
 }
 
@@ -57,6 +63,10 @@
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [appDelegate saveContext];
     
+    // DeadlineDetailView aktualisieren, damit Aenderungen angezeigt werden
+    if (self.deadlineDetailView != nil) {
+        [self.deadlineDetailView configureView];
+    }
     // Edit View schliessen
     [self dismissViewControllerAnimated:YES completion:nil];
 }

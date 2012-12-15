@@ -21,4 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *deadlineEndDate;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+- (void)configureView;
+
 @end

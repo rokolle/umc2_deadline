@@ -10,6 +10,7 @@
 
 @interface DeadlineEditViewController : UIViewController
 @property (strong, nonatomic) id deadlineDetailItem;
+@property (strong, nonatomic) id deadlineDetailView;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

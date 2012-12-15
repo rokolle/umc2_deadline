@@ -9,6 +9,7 @@
 #import "DeadlineDetailViewController.h"
 
 #import "TaskDetailViewController.h"
+#import "DeadlineEditViewController.h"
 
 @interface DeadlineDetailViewController ()
 - (void)configureView;
@@ -269,6 +270,7 @@
     
     if ([[segue identifier] isEqualToString:@"showDeadlineEdit"]) {
         [[segue destinationViewController] setDeadlineDetailItem:self.deadlineDetailItem];
+        [[segue destinationViewController] setDeadlineDetailView:self];
     }
 }
 @end
