@@ -9,6 +9,8 @@
 #import "DeadlineEditViewController.h"
 #import "DeadlineDetailViewController.h"
 
+#import "AppDelegate.h"
+
 @interface DeadlineEditViewController ()
 
 @end
@@ -47,9 +49,15 @@
 }
 
 - (IBAction)DoneButtonAction:(id)sender {
+    // Daten aus UI in Core Data Objekt packen
     [self.deadlineDetailItem setValue:self.nameTextField.text forKey:@"name"];
     [self.deadlineDetailItem setValue:self.datePicker.date forKey:@"endDate"];
     
+    // Core Data Context sichern
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [appDelegate saveContext];
+    
+    // Edit View schliessen
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
