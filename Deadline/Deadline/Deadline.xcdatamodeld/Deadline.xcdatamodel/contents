@@ -12,7 +12,7 @@
     <entity name="Task">
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="done" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
-        <attribute name="duration" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="duration" attributeType="Integer 32" minValueString="0" defaultValueString="0" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="inDeadline" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Deadline" inverseName="hasTask" inverseEntity="Deadline" syncable="YES"/>
         <userInfo/>

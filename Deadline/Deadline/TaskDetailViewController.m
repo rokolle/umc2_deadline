@@ -32,7 +32,14 @@
     
     if (self.taskDetailItem) {
         self.navigationItem.title = [[self.taskDetailItem valueForKey:@"name"] description];
-        self.taskDuration.text = [[self.taskDetailItem valueForKey:@"duration"] description];
+
+        NSNumber *num = [self.taskDetailItem valueForKey:@"duration"];
+        int duration = [num integerValue];
+        int std = duration / 3600;
+        int min = duration / 60 % 60;
+        NSString *durationAsString = [[NSString alloc] initWithFormat:@"%02d:%02d", std, min];
+        
+        self.taskDuration.text = durationAsString;
     }
 }
 

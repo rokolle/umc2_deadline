@@ -30,7 +30,11 @@
     if (self.taskDetailItem) {
         self.navItem.title = [self.taskDetailItem valueForKey:@"name"];
         self.nameTextField.text = [self.taskDetailItem valueForKey:@"name"];
-//        [self.datePicker setDate:[self.tasklineDetailItem valueForKey:@"endDate"] animated:YES];
+        NSNumber *num = [self.taskDetailItem valueForKey:@"duration"];
+        int duration = [num integerValue];
+        if (duration < 0) duration = 0;
+        if (duration > 86399) duration = 86399;
+        [self.datePicker setCountDownDuration:duration];
     }
 }
 
