@@ -20,6 +20,10 @@
 {
     if (_deadlineDetailItem != newDeadlineDetailItem) {
         _deadlineDetailItem = newDeadlineDetailItem;
+        
+        // Update the view.
+        //        [self configureView];
+
     }
 }
 
@@ -69,9 +73,6 @@
     }
     // Edit View schliessen
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)datePickerValueChanged:(id)sender {
 }
 
 - (IBAction)doneEditingTextField:(id)sender {

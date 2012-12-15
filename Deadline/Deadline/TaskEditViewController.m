@@ -14,9 +14,24 @@
 
 @implementation TaskEditViewController
 
+- (void)setTaskDetailItem:(id)newTaskDetailItem
+{
+    if (_taskDetailItem != newTaskDetailItem) {
+        _taskDetailItem = newTaskDetailItem;
+        
+        // Update the view.
+        //        [self configureView];
+    }
+}
+
 - (void)configureView
 {
-    self.navItem.title = @"task titel gesetzt in C";
+    // Update the user interface for the detail item.
+    if (self.taskDetailItem) {
+        self.navItem.title = [self.taskDetailItem valueForKey:@"name"];
+        self.nameTextField.text = [self.taskDetailItem valueForKey:@"name"];
+//        [self.datePicker setDate:[self.tasklineDetailItem valueForKey:@"endDate"] animated:YES];
+    }
 }
 
 - (void)viewDidLoad
@@ -33,6 +48,14 @@
 }
 
 - (IBAction)DoneButtonAction:(id)sender {
+    // Daten aus UI in Core Data Objekt packen
+    [self.taskDetailItem setValue:self.nameTextField.text forKey:@"name"];
+//    [self.taskDetailItem setValue:self.datePicker.date forKey:@"endDate"];
+
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)doneEditingTextField:(id)sender {
+    [sender resignFirstResponder];
 }
 @end

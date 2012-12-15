@@ -17,6 +17,8 @@
 
 @implementation DeadlineDetailViewController
 
+NSManagedObject *newManagedObject;
+
 #pragma mark - Managing the detail item
 
 - (void)setDeadlineDetailItem:(id)newDeadlineDetailItem
@@ -125,11 +127,11 @@
 {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSString stringWithFormat:@"Task %@", [NSDate date]] forKey:@"name"];
+    [newManagedObject setValue:[NSString stringWithFormat:@"Neuer Task"] forKey:@"name"];
     [newManagedObject setValue:[NSNumber numberWithInt:4712] forKey:@"duration"];
 
     // Hinzufuegen des neuen TaskObjekts zur Deadline
@@ -271,6 +273,10 @@
     if ([[segue identifier] isEqualToString:@"showDeadlineEdit"]) {
         [[segue destinationViewController] setDeadlineDetailItem:self.deadlineDetailItem];
         [[segue destinationViewController] setDeadlineDetailView:self];
+    }
+
+    if ([[segue identifier] isEqualToString:@"showTaskEdit"]) {
+        [[segue destinationViewController] setTaskDetailItem:newManagedObject];
     }
 }
 @end

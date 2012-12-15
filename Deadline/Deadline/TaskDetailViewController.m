@@ -22,7 +22,7 @@
         _taskDetailItem = newTaskDetailItem;
         
         // Update the view.
-        [self configureView];
+//        [self configureView];
     }
 }
 
@@ -47,6 +47,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Uebergabe der Daten bei Uebergang zum Task Edit View
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showTaskEdit"]) {
+        [[segue destinationViewController] setTaskDetailItem:self.taskDetailItem];
+    }
 }
 
 @end
