@@ -13,4 +13,5 @@
 @property (strong, nonatomic) id taskDetailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *taskDuration;
+@property (weak, nonatomic) IBOutlet UILabel *doneMark;
 @end

@@ -47,7 +47,7 @@ NSManagedObject *newManagedObject;
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSString stringWithFormat:@"Neue Deadline"] forKey:@"name"];
+//    [newManagedObject setValue:[NSString stringWithFormat:@"Neue Deadline"] forKey:@"name"];
     [newManagedObject setValue:[NSDate date] forKey:@"endDate"];
     
     // Save the context.
@@ -231,6 +231,7 @@ NSManagedObject *newManagedObject;
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"name"] description];
+    cell.detailTextLabel.text = [[object valueForKey:@"endDate"] description];
 }
 
 

@@ -40,6 +40,7 @@
     if (self.deadlineDetailItem) {
         self.navItem.title = [self.deadlineDetailItem valueForKey:@"name"];
         self.nameTextField.text = [self.deadlineDetailItem valueForKey:@"name"];
+        self.detailTextField.text = [self.deadlineDetailItem valueForKey:@"detail"];
         [self.datePicker setDate:[self.deadlineDetailItem valueForKey:@"endDate"] animated:YES];
     }
 }
@@ -61,6 +62,7 @@
 - (IBAction)DoneButtonAction:(id)sender {
     // Daten aus UI in Core Data Objekt packen
     [self.deadlineDetailItem setValue:self.nameTextField.text forKey:@"name"];
+    [self.deadlineDetailItem setValue:self.detailTextField.text forKey:@"detail"];
     [self.deadlineDetailItem setValue:self.datePicker.date forKey:@"endDate"];
     
     // Core Data Context sichern
@@ -71,6 +73,7 @@
     if (self.deadlineDetailView != nil) {
         [self.deadlineDetailView configureView];
     }
+
     // Edit View schliessen
     [self dismissViewControllerAnimated:YES completion:nil];
 }

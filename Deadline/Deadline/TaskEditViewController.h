@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
 @property (strong, nonatomic) id taskDetailItem;
+@property (strong, nonatomic) id taskDetailView;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *doneSwitch;

@@ -35,6 +35,7 @@ NSManagedObject *newManagedObject;
     if (self.deadlineDetailItem) {
         self.navigationItem.title = [[self.deadlineDetailItem valueForKey:@"name"] description];
         self.deadlineEndDate.text = [[self.deadlineDetailItem valueForKey:@"endDate"] description];
+        self.deadlineDetail.text = [[self.deadlineDetailItem valueForKey:@"detail"] description];
     }
 }
 
@@ -131,8 +132,8 @@ NSManagedObject *newManagedObject;
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSString stringWithFormat:@"Neuer Task"] forKey:@"name"];
-    [newManagedObject setValue:[NSNumber numberWithInt:4712] forKey:@"duration"];
+//    [newManagedObject setValue:[NSString stringWithFormat:@"Neuer Task"] forKey:@"name"];
+//    [newManagedObject setValue:[NSNumber numberWithInt:0] forKey:@"duration"];
 
     // Hinzufuegen des neuen TaskObjekts zur Deadline
     [newManagedObject setValue:self.deadlineDetailItem forKey:@"inDeadline"];
@@ -259,6 +260,13 @@ NSManagedObject *newManagedObject;
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"name"] description];
+    if ([[object valueForKey:@"done"] boolValue]) {
+        cell.detailTextLabel.text = @"Erledigt";
+        cell.detailTextLabel.textColor = [UIColor greenColor];
+    } else {
+        cell.detailTextLabel.text = @"Nicht erledigt";
+        cell.detailTextLabel.textColor = [UIColor redColor];
+    }
 }
 
 // Uebergabe der Daten bei Uebergang zum Task Detail View bzw. Deadline Edit View

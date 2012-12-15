@@ -8,6 +8,8 @@
 
 #import "TaskDetailViewController.h"
 
+#import "TaskEditViewController.h"
+
 @interface TaskDetailViewController ()
 - (void)configureView;
 @end
@@ -32,6 +34,13 @@
     
     if (self.taskDetailItem) {
         self.navigationItem.title = [[self.taskDetailItem valueForKey:@"name"] description];
+        if ([[self.taskDetailItem valueForKey:@"done"] boolValue]) {
+            self.doneMark.text = @"\u2713"; // CHECK MARK
+            self.doneMark.textColor = [UIColor greenColor];
+        } else {
+            self.doneMark.text = @"\u2717"; // BALLOT X
+            self.doneMark.textColor = [UIColor redColor];
+        }
 
         NSNumber *num = [self.taskDetailItem valueForKey:@"duration"];
         int duration = [num integerValue];
@@ -61,6 +70,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showTaskEdit"]) {
         [[segue destinationViewController] setTaskDetailItem:self.taskDetailItem];
+        [[segue destinationViewController] setTaskDetailView:self];
     }
 }
 

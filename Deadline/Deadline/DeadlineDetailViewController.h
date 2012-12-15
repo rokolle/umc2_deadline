@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *taskNavItem;
 @property (weak, nonatomic) IBOutlet UILabel *deadlineEndDate;
+@property (weak, nonatomic) IBOutlet UILabel *deadlineDetail;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (void)configureView;
