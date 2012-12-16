@@ -49,6 +49,8 @@
         NSString *durationAsString = [[NSString alloc] initWithFormat:@"%02d:%02d", std, min];
         
         self.taskDuration.text = durationAsString;
+
+        self.detailTextView.text = [[self.taskDetailItem valueForKey:@"detail"] description];
     }
 }
 

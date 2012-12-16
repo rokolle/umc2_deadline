@@ -81,4 +81,11 @@
 - (IBAction)doneEditingTextField:(id)sender {
     [sender resignFirstResponder];
 }
+
+- (void)touchesEnded: (NSSet *)touches withEvent: (UIEvent *)event {
+	for (UIView* view in self.view.subviews) {
+		if ([view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]])
+			[view resignFirstResponder];
+	}
+}
 @end

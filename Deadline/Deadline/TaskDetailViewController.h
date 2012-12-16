@@ -14,4 +14,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *taskDuration;
 @property (weak, nonatomic) IBOutlet UILabel *doneMark;
+@property (weak, nonatomic) IBOutlet UITextView *detailTextView;
 @end

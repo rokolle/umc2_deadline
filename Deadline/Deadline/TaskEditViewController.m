@@ -41,6 +41,7 @@
     if (self.taskDetailItem) {
         self.navItem.title = [self.taskDetailItem valueForKey:@"name"];
         self.nameTextField.text = [self.taskDetailItem valueForKey:@"name"];
+        self.detailTextView.text = [self.taskDetailItem valueForKey:@"detail"];
         self.doneSwitch.on = [[self.taskDetailItem valueForKey:@"done"] boolValue];
         NSNumber *num = [self.taskDetailItem valueForKey:@"duration"];
         int duration = [num integerValue];
@@ -66,6 +67,7 @@
 - (IBAction)DoneButtonAction:(id)sender {
     // Daten aus UI in Core Data Objekt packen
     [self.taskDetailItem setValue:self.nameTextField.text forKey:@"name"];
+    [self.taskDetailItem setValue:self.detailTextView.text forKey:@"detail"];
     [self.taskDetailItem setValue:[NSNumber numberWithDouble:self.datePicker.countDownDuration] forKey:@"duration"];
     [self.taskDetailItem setValue:[NSNumber numberWithBool:self.doneSwitch.on] forKey:@"done"];
 
@@ -84,5 +86,12 @@
 
 - (IBAction)doneEditingTextField:(id)sender {
     [sender resignFirstResponder];
+}
+
+- (void)touchesEnded: (NSSet *)touches withEvent: (UIEvent *)event {
+	for (UIView* view in self.view.subviews) {
+		if ([view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]])
+			[view resignFirstResponder];
+	}
 }
 @end

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *doneSwitch;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextView *detailTextView;
 
 - (IBAction)DoneButtonAction:(id)sender;
 - (IBAction)doneEditingTextField:(id)sender;
