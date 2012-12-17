@@ -8,21 +8,83 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Wochentage</string>
+			<string>Wochentage - Geben Sie hier die zur Verfügung stehende Arbeitszeit für jeden Tag in Stunden an</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Test</string>
+			<string>Montag</string>
 			<key>Key</key>
-			<string>times_pane_textfield</string>
+			<string>times_preferences_mon</string>
+			<key>DefaultValue</key>
+			<string>8</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Dienstag</string>
+			<key>Key</key>
+			<string>times_preferences_tue</string>
+			<key>DefaultValue</key>
+			<string>8</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Mittwoch</string>
+			<key>Key</key>
+			<string>times_preferences_wed</string>
+			<key>DefaultValue</key>
+			<string>8</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Donnerstag</string>
+			<key>Key</key>
+			<string>times_preferences_thu</string>
+			<key>DefaultValue</key>
+			<string>8</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Freitag</string>
+			<key>Key</key>
+			<string>times_preferences_fri</string>
+			<key>DefaultValue</key>
+			<string>8</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Samstag</string>
+			<key>Key</key>
+			<string>times_preferences_sat</string>
+			<key>DefaultValue</key>
+			<string>8</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Sonntag</string>
+			<key>Key</key>
+			<string>times_preferences_sun</string>
+			<key>DefaultValue</key>
+			<string>8</string>
 		</dict>
 	</array>
 	<key>Key</key>
 	<string>times_preferences</string>
 	<key>Title</key>
-	<string>Testtitel</string>
+	<string>Arbeitszeiten einstellen</string>
 	<key>StringsTable</key>
 	<string>Root</string>
 </dict>
