@@ -34,7 +34,12 @@ NSManagedObject *newManagedObject;
     NSLog(@"configureView in DeadlineDetailViewController");
     if (self.deadlineDetailItem) {
         self.navigationItem.title = [[self.deadlineDetailItem valueForKey:@"name"] description];
-        self.deadlineEndDate.text = [[self.deadlineDetailItem valueForKey:@"endDate"] description];
+
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+        self.deadlineEndDate.text = [dateFormatter stringFromDate:[self.deadlineDetailItem valueForKey:@"endDate"]];
+        
         self.deadlineDetail.text = [[self.deadlineDetailItem valueForKey:@"detail"] description];
     }
 }
@@ -121,7 +126,7 @@ NSManagedObject *newManagedObject;
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // The table view should not be re-orderable.
-    return YES;
+    return NO;
 }
 
 - (void)insertNewObject:(id)sender
@@ -170,8 +175,9 @@ NSManagedObject *newManagedObject;
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
+    NSSortDescriptor *sortDescriptor1 = [[NSSortDescriptor alloc] initWithKey:@"done" ascending:YES];
+    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"duration" ascending:NO];
+    NSArray *sortDescriptors = @[sortDescriptor1, sortDescriptor2];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
@@ -260,11 +266,17 @@ NSManagedObject *newManagedObject;
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"name"] description];
+    NSNumber *num = [object valueForKey:@"duration"];
+    int duration = [num integerValue];
+    int std = duration / 3600;
+    int min = duration / 60 % 60;
+    NSString *durationAsString = [[NSString alloc] initWithFormat:@"%02d:%02d", std, min];
+
     if ([[object valueForKey:@"done"] boolValue]) {
-        cell.detailTextLabel.text = @"Erledigt";
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - Erledigt", durationAsString];
         cell.detailTextLabel.textColor = [UIColor greenColor];
     } else {
-        cell.detailTextLabel.text = @"Nicht erledigt";
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - Nicht erledigt", durationAsString];
         cell.detailTextLabel.textColor = [UIColor redColor];
     }
 }

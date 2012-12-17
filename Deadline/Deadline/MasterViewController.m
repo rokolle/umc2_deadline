@@ -47,7 +47,6 @@ NSManagedObject *newManagedObject;
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-//    [newManagedObject setValue:[NSString stringWithFormat:@"Neue Deadline"] forKey:@"name"];
     [newManagedObject setValue:[NSDate date] forKey:@"endDate"];
     
     // Save the context.
@@ -145,7 +144,7 @@ NSManagedObject *newManagedObject;
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"endDate" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -230,8 +229,13 @@ NSManagedObject *newManagedObject;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
     cell.textLabel.text = [[object valueForKey:@"name"] description];
-    cell.detailTextLabel.text = [[object valueForKey:@"endDate"] description];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:[object valueForKey:@"endDate"]];
 }
 
 

@@ -10,6 +10,8 @@
 		8E7F0C2C166E98A60037A72E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E7F0C2B166E98A60037A72E /* Settings.bundle */; };
 		8E7F0C2E166EB3DB0037A72E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E7F0C2B166E98A60037A72E /* Settings.bundle */; };
 		8F69D3FE1664D50500881BD6 /* DeadlineEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F69D3FD1664D50500881BD6 /* DeadlineEditViewController.m */; };
+		8FC210A8167F6422009BC1FD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC210A6167F6422009BC1FD /* Icon.png */; };
+		8FC210A9167F6422009BC1FD /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC210A7167F6422009BC1FD /* Icon@2x.png */; };
 		8FC36D071664F6880072FED3 /* TaskEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC36D061664F6880072FED3 /* TaskEditViewController.m */; };
 		8FCD09BB16637D0500C06CB3 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD09BA16637D0500C06CB3 /* TaskDetailViewController.m */; };
 		8FE1B0DE164FFBAE00812FE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE1B0DD164FFBAE00812FE5 /* UIKit.framework */; };
@@ -48,6 +50,8 @@
 		8E7F0C2B166E98A60037A72E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8F69D3FC1664D50400881BD6 /* DeadlineEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineEditViewController.h; sourceTree = "<group>"; };
 		8F69D3FD1664D50500881BD6 /* DeadlineEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineEditViewController.m; sourceTree = "<group>"; };
+		8FC210A6167F6422009BC1FD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		8FC210A7167F6422009BC1FD /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		8FC36D051664F6880072FED3 /* TaskEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskEditViewController.h; sourceTree = "<group>"; };
 		8FC36D061664F6880072FED3 /* TaskEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskEditViewController.m; sourceTree = "<group>"; };
 		8FCD09B916637D0500C06CB3 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 		8FE1B0E6164FFBAE00812FE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8FC210A6167F6422009BC1FD /* Icon.png */,
+				8FC210A7167F6422009BC1FD /* Icon@2x.png */,
 				8FE1B0E7164FFBAE00812FE5 /* Deadline-Info.plist */,
 				8FE1B0E8164FFBAE00812FE5 /* InfoPlist.strings */,
 				8FE1B0EB164FFBAE00812FE5 /* main.m */,
@@ -271,6 +277,8 @@
 				8FE1B0F6164FFBAE00812FE5 /* Default-568h@2x.png in Resources */,
 				8FE1B0F9164FFBAE00812FE5 /* MainStoryboard.storyboard in Resources */,
 				8E7F0C2C166E98A60037A72E /* Settings.bundle in Resources */,
+				8FC210A8167F6422009BC1FD /* Icon.png in Resources */,
+				8FC210A9167F6422009BC1FD /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
