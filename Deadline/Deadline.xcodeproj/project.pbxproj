@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8E7F0C2C166E98A60037A72E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E7F0C2B166E98A60037A72E /* Settings.bundle */; };
 		8E7F0C2E166EB3DB0037A72E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E7F0C2B166E98A60037A72E /* Settings.bundle */; };
+		8E896634167F803800E75C06 /* TimesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E896633167F803800E75C06 /* TimesManager.m */; };
+		8E896637167F804900E75C06 /* PreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E896636167F804900E75C06 /* PreferencesManager.m */; };
 		8F69D3FE1664D50500881BD6 /* DeadlineEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F69D3FD1664D50500881BD6 /* DeadlineEditViewController.m */; };
 		8FC210A8167F6422009BC1FD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC210A6167F6422009BC1FD /* Icon.png */; };
 		8FC210A9167F6422009BC1FD /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC210A7167F6422009BC1FD /* Icon@2x.png */; };
@@ -48,6 +50,10 @@
 
 /* Begin PBXFileReference section */
 		8E7F0C2B166E98A60037A72E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8E896632167F803800E75C06 /* TimesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimesManager.h; sourceTree = "<group>"; };
+		8E896633167F803800E75C06 /* TimesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimesManager.m; sourceTree = "<group>"; };
+		8E896635167F804900E75C06 /* PreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesManager.h; sourceTree = "<group>"; };
+		8E896636167F804900E75C06 /* PreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesManager.m; sourceTree = "<group>"; };
 		8F69D3FC1664D50400881BD6 /* DeadlineEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineEditViewController.h; sourceTree = "<group>"; };
 		8F69D3FD1664D50500881BD6 /* DeadlineEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineEditViewController.m; sourceTree = "<group>"; };
 		8FC210A6167F6422009BC1FD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -110,6 +116,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E89662F167F7AAF00E75C06 /* prefs */ = {
+			isa = PBXGroup;
+			children = (
+				8E896635167F804900E75C06 /* PreferencesManager.h */,
+				8E896636167F804900E75C06 /* PreferencesManager.m */,
+			);
+			name = prefs;
+			sourceTree = "<group>";
+		};
+		8E896631167F7ABA00E75C06 /* times */ = {
+			isa = PBXGroup;
+			children = (
+				8E896632167F803800E75C06 /* TimesManager.h */,
+				8E896633167F803800E75C06 /* TimesManager.m */,
+			);
+			name = times;
+			sourceTree = "<group>";
+		};
 		8FE1B0CE164FFBAE00812FE5 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +168,8 @@
 		8FE1B0E5164FFBAE00812FE5 /* Deadline */ = {
 			isa = PBXGroup;
 			children = (
+				8E896631167F7ABA00E75C06 /* times */,
+				8E89662F167F7AAF00E75C06 /* prefs */,
 				8E7F0C2B166E98A60037A72E /* Settings.bundle */,
 				8FE1B0EE164FFBAE00812FE5 /* AppDelegate.h */,
 				8FE1B0EF164FFBAE00812FE5 /* AppDelegate.m */,
@@ -322,6 +348,8 @@
 				8FCD09BB16637D0500C06CB3 /* TaskDetailViewController.m in Sources */,
 				8F69D3FE1664D50500881BD6 /* DeadlineEditViewController.m in Sources */,
 				8FC36D071664F6880072FED3 /* TaskEditViewController.m in Sources */,
+				8E896634167F803800E75C06 /* TimesManager.m in Sources */,
+				8E896637167F804900E75C06 /* PreferencesManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
