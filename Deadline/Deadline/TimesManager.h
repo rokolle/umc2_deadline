@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PreferencesManager.h"
 
 @interface TimesManager : NSObject
-
++ (NSDate *) getLSPForDeadline:(id)deadline;
++ (int) getSumTimeForDeadline:(id)deadline;
++ getDeadlinesOrdered;
 @end

@@ -31,8 +31,6 @@ NSManagedObject *newManagedObject;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.leftBarButtonItem = addButton;
-	
-	NSString *name = [PreferencesManager getName];
 }
 
 - (void)didReceiveMemoryWarning

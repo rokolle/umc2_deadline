@@ -15,9 +15,11 @@
 @property NSString* email;
 
 + getValueForKey:(NSString *) key;
-//+ (int) getStandardBuffer;
+
++ (int) getBuffer;
 + (NSString *) getName;
-//+ (NSString) getEmail;
++ (NSString *) getEmail;
 //+ (TimeValue)getTimes;
-//+ (void)getNotification;
++ (BOOL) getNotificationTwoWeeks;
++ (BOOL) getNotificationOneWeek;
 @end
