@@ -2,7 +2,7 @@
 //  main.m
 //  Deadline
 //
-//  Created by Benedict Endemann on 11.11.12.
+//  Created by Benedict Endemann.
 //  Copyright (c) 2012 SeRoBe. All rights reserved.
 //
 

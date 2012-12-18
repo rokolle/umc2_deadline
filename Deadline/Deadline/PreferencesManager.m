@@ -2,7 +2,7 @@
 //  PreferencesManager.m
 //  Deadline
 //
-//  Created by Robert Kolle on 17.12.12.
+//  Created by Robert Kolle.
 //  Copyright (c) 2012 SeRoBe. All rights reserved.
 //
 
@@ -10,25 +10,13 @@
 
 @implementation PreferencesManager
 
-@synthesize forename, email, standardBuffer;
-
-+(id)getValueForKey:(NSString *)key{
++ (id) getValueForKey:(NSString *)key{
 	return NULL;
 }
 
-/*+ (NSString) getName{
-
++ (NSString *) getName{
+	return [[NSUserDefaults standardUserDefaults] stringForKey:@"pref_forename"];
 };
 
-+ (NSSTRING) getEmail{
-	
-};
 
-+ (TimeValue) getTimes{
-	
-};
-
-+ (void) getNotifications{
-	
-};*/
 @end

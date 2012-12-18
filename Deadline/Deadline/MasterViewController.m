@@ -2,7 +2,7 @@
 //  MasterViewController.m
 //  Deadline
 //
-//  Created by Benedict Endemann on 11.11.12.
+//  Created by Benedict Endemann.
 //  Copyright (c) 2012 SeRoBe. All rights reserved.
 //
 
@@ -31,6 +31,8 @@ NSManagedObject *newManagedObject;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.leftBarButtonItem = addButton;
+	
+	NSString *name = [PreferencesManager getName];
 }
 
 - (void)didReceiveMemoryWarning

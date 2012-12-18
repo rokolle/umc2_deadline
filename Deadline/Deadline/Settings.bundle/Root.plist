@@ -16,7 +16,7 @@
 			<key>Title</key>
 			<string>Vorname</string>
 			<key>Key</key>
-			<string>forename_preference</string>
+			<string>pref_forename</string>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
 		</dict>
@@ -26,7 +26,7 @@
 			<key>Title</key>
 			<string>E-Mail</string>
 			<key>Key</key>
-			<string>user_email_preference</string>
+			<string>pref_user_email</string>
 			<key>KeyboardType</key>
 			<string>EmailAddress</string>
 		</dict>
@@ -42,7 +42,7 @@
 			<key>Title</key>
 			<string>2 Wochen vor Beginn</string>
 			<key>Key</key>
-			<string>two_week_left_preference</string>
+			<string>pref_two_weeks_left</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
@@ -50,7 +50,7 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
-			<string>one_week_left_preference</string>
+			<string>pref_one_week_left</string>
 			<key>Title</key>
 			<string>1 Woche vor Beginn</string>
 			<key>Type</key>
@@ -64,15 +64,11 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSSliderSpecifier</string>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Puffer in %</string>
 			<key>Key</key>
-			<string>pref_default_buffer</string>
-			<key>DefaultValue</key>
-			<integer>10</integer>
-			<key>MinimumValue</key>
-			<integer>0</integer>
-			<key>MaximumValue</key>
-			<integer>40</integer>
+			<string>pref_buffer</string>
 		</dict>
 		<dict>
 			<key>Type</key>

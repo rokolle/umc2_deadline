@@ -2,7 +2,7 @@
 //  PreferencesManager.h
 //  Deadline
 //
-//  Created by Robert Kolle on 17.12.12.
+//  Created by Robert Kolle.
 //  Copyright (c) 2012 SeRoBe. All rights reserved.
 //
 
@@ -16,7 +16,7 @@
 
 + getValueForKey:(NSString *) key;
 //+ (int) getStandardBuffer;
-//+ (NSString) getName;
++ (NSString *) getName;
 //+ (NSString) getEmail;
 //+ (TimeValue)getTimes;
 //+ (void)getNotification;
