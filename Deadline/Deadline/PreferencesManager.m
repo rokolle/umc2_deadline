@@ -10,4 +10,25 @@
 
 @implementation PreferencesManager
 
+@synthesize forename, email, standardBuffer;
+
++(id)getValueForKey:(NSString *)key{
+	return NULL;
+}
+
+/*+ (NSString) getName{
+
+};
+
++ (NSSTRING) getEmail{
+	
+};
+
++ (TimeValue) getTimes{
+	
+};
+
++ (void) getNotifications{
+	
+};*/
 @end
